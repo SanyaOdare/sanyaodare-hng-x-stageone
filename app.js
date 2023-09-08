@@ -1,29 +1,17 @@
-// display current day of the week
-
-// function showMyDetails(testid) {
-//   let info = testid.getAttribute("data-testid")
-//   document.querySelectorAll("li").innerHTML = info;
-// }
-
-// showMyDetails(info);
+const userName = document.querySelector("#username");
+userName.dataset.testid = "SanyaOdare";
 
 // Indicate the current day of the week
-function displayToday() {
-  const today = new Date();
-  const dayOfTheWeek = today.toDateString();
-  document.getElementById("today").innerHTML = dayOfTheWeek;
+const currentDayOfTheWeek = document.querySelector("#day-of-the-week");
+const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",]
+function displayToday() {  
+  const newDay = new Date();
+  const dayOfTheWeek = weekday[newDay.getDay()];
+  // const dayOfTheWeek = today.toDateString();
+  currentDayOfTheWeek.dataset.testid = dayOfTheWeek;
 }
 
 displayToday();
-
-// Display the current UTC time in milliseconds.
-// function displayTime() {
-//   const time = new Date();
-//   const dayOfTheWeek = today.toDateString();
-//   document.getElementById("today").innerHTML = dayOfTheWeek;
-// }
-
-// displayTime();
 
 /*
 Requirements:

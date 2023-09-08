@@ -36,11 +36,6 @@ body {
   padding: 4rem;
 }
 
-h1 {
-  font-size: 4rem;
-  margin: 0;
-}
-
 img {
   border-radius: 50%;
   /* width: 50%; */
@@ -50,6 +45,18 @@ ul {
   list-style-type: none;
   margin-top: 2rem;
 }
+
+#username::after {
+  content: attr(data-testid);
+  font-size: 4rem;
+  margin: 0;
+}
+
+#day-of-the-week::after {
+  content: attr(data-testid);
+  font-size: 3rem;
+}
+
 
 #right {
   background: #000;
