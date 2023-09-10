@@ -1,17 +1,31 @@
 const userName = document.querySelector("#username");
-userName.dataset.testid = "SanyaOdare";
-
-// Indicate the current day of the week
 const currentDayOfTheWeek = document.querySelector("#day-of-the-week");
-const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",]
-function displayToday() {  
+const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
+const currentUTCTime = document.querySelector("#current-utc-time"); 
+const track = document.querySelector("#track");
+const githubURL = document.querySelector("#github-url");
+
+function displayProfileInfo() {
+  userName.dataset.testid = "SanyaOdare";
+
+  // current day of the week
   const newDay = new Date();
-  const dayOfTheWeek = weekday[newDay.getDay()];
-  // const dayOfTheWeek = today.toDateString();
+  const dayOfTheWeek = weekdays[newDay.getDay()];
   currentDayOfTheWeek.dataset.testid = dayOfTheWeek;
+
+  // current utc time
+  const utcTime = new Date(Date.UTC(0, 0, 0, 0, 0, 0));
+  const newUTCTime =  utcTime.toUTCString();
+  currentUTCTime.dataset.testid = newUTCTime;
+
+  // track
+  track.dataset.testid = "Frontend";
+
+  // Github URL
+  // githubURL.dataset.testid = "<a href="https://github.com/SanyaOdare" />"
 }
 
-displayToday();
+displayProfileInfo();
 
 /*
 Requirements:
