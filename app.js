@@ -23,7 +23,7 @@ function displayProfileInfo() {
 
   currentUTCTime.dataset.testid = utcNow;
 
-  setInterval(displayProfileInfo, 1000);
+  // setInterval(displayProfileInfo, 1000);
   // ------------------------------------------
 
   // track
