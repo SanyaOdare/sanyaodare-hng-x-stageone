@@ -9,43 +9,55 @@
 body {
   background-color: #f0f0f0;  
   font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  width: 100%
 }
+
+a {
+  /* text-decoration: none; */
+  color: #f0f0f0;
+}
+  
 
 #container {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
-  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 #left {
-  background: #ff0000;
+  background-color: #ff0000;
   color: #f0f0f0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  flex: 1;
+  padding: 2rem;
+  width: 100vw;
+}
+
+#right {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
   padding: 2rem 0;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 img {
   border-radius: 50%;
 }
 
-p {
-  margin-top: 2rem;
-}
-
-p:not(:first-child) {
-  margin-top: 1rem;
-}
-
 #username::after {
   content: attr(data-testid);
-  font-size: 4rem;
-  margin: 0;
+  font-size: 7rem;
+  margin-bottom: 7rem;
 }
 
 #day-of-the-week::after {
@@ -53,27 +65,18 @@ p:not(:first-child) {
   font-size: 3rem;
 }
 
-#current-utc-time::after {
-  content: attr(data-testid);
-  font-size: 1.5rem;
-}
-
-#track::after {
-  content: attr(data-testid);
-  font-size: 1.5rem;
-}
-
+#current-utc-time::after,
+#track::after,
 #github-url::after {
   content: attr(data-testid);
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin: 4rem 0;
 }
 
-
-#right {
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 0;
-  width: 100vw;
+@media (max-width:700px ) {
+  #username::after {
+    content: attr(data-testid);
+    font-size: 4rem;
+  }
+  
 }

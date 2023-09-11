@@ -22,7 +22,7 @@ function displayProfileInfo() {
   track.dataset.testid = "Frontend";
 
   // Github URL
-  // githubURL.dataset.testid = "<a href="https://github.com/SanyaOdare" />"
+  githubURL.dataset.testid = "My Github Profile"
 }
 
 displayProfileInfo();
