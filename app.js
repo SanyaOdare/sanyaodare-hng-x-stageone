@@ -12,11 +12,19 @@ function displayProfileInfo() {
   const newDay = new Date();
   const dayOfTheWeek = weekdays[newDay.getDay()];
   currentDayOfTheWeek.dataset.testid = dayOfTheWeek;
+  
+  // current UTC Time
+  const hours = newDay.getUTCHours();
+  const minutes = newDay.getUTCMinutes();
+  const seconds = newDay.getUTCSeconds();
+  const milliseconds = newDay.getUTCMilliseconds();
 
-  // current utc time
-  const utcTime = new Date(Date.UTC(0, 0, 0, 0, 0, 0));
-  const newUTCTime =  utcTime.toUTCString();
-  currentUTCTime.dataset.testid = newUTCTime;
+  const utcNow = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+
+  currentUTCTime.dataset.testid = utcNow;
+
+  setInterval(displayProfileInfo, 1000);
+  // ------------------------------------------
 
   // track
   track.dataset.testid = "Frontend";
@@ -26,28 +34,3 @@ function displayProfileInfo() {
 }
 
 displayProfileInfo();
-
-/*
-Requirements:
-
-Slack Name:
-Display your Slack name prominently.
-Attribute: data-testid="slackUserName"
-Slack Display Picture:
-Showcase your Slack profile picture.
-The image's alt attribute should be your Slack username.
-Attribute: data-testid="slackDisplayImage"
-Current Day of the Week:
-Indicate the current day of the week (e.g., Monday, Tuesday).
-Attribute: data-testid="currentDayOfTheWeek"
-Current UTC Time:
-Display the current UTC time in milliseconds.
-Attribute: data-testid="currentUTCTime"
-Track:
-Mention your track (e.g Frontend).
-Attribute: data-testid="myTrack"
-GitHub URL:
-Provide a clickable link to your GitHub repository where the source code for this task resides.
-Attribute: data-testid=“githubURL”
-
-*/
